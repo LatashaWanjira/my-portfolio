@@ -1,0 +1,21 @@
+<% content_for(:title, "Personal Portfolio")%>
+
+<h2>My Skills</h2>
+
+<% if @skills.any? %>
+
+	<ul>
+		<% @skills.each do |skill| %>
+			<li><%= link_to skill.skill_name, skill_path(skill) %></li>
+		<% end %>
+	</ul>
+
+<% else %>
+
+	<p>Under construction</p>
+
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "New Skill", new_skill_path %>
+<% end %>

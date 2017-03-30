@@ -1,0 +1,10 @@
+<% content_for(:title, "Skill | Personal Portfolio") %>
+
+<h1><%= @skill.skill_name %></h1>
+<p>Skill level: <%= @skill.skill_ability %></p>
+
+
+<% if user_signed_in? %>
+  <%= link_to "Edit Skill", edit_skill_path %>
+  <%= link_to "Delete Skill", skill_path(@skill),:data => {:confirm => "Are you sure?",:method => "delete"} %>
+<% end %>
