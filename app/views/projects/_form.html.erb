@@ -1,0 +1,16 @@
+<%= render "layouts/errors", :object => @project %>
+
+<%= form_for @project, html: { multipart: true } do |f| %>
+	
+	<%= f.label :project_name %>
+	<%= f.text_field :project_name %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+
+	<%= f.label :link %>
+	<%= f.text_field :link %>
+
+	<%= f.submit %>
+
+<% end %>

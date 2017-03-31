@@ -31,7 +31,7 @@ class SkillsController < ApplicationController
 
   def update
     @skill = Skill.find(params[:id])
-    if @skill.update
+    if @skill.update(skill_params)
       flash[:notice] = "Skill updated sucessfully!"
       redirect_to skills_path
     else

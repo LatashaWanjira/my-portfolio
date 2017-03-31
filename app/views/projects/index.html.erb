@@ -1,0 +1,21 @@
+<% content_for(:title, "Projects | Personal Portfolio") %>
+
+<h1>Projects</h1>
+
+<% if @projects.any? %>
+	
+	<ul>
+		<% @projects.each do |project| %>
+			<li><%= link_to project.project_name, project_path(project) %></li>
+		<% end %>
+	</ul>
+
+<% else %>
+		
+	<h4>Nothing to see here...be on your way</h4>
+
+<% end %>
+
+<% if user_signed_in? %>
+	<%= link_to "New Project", new_project_path%>
+<% end %>
